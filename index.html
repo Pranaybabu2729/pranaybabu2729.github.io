@@ -1,66 +1,180 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Pranay Babu Mekala | Data Engineer</title>
-  <style>
-    body { font-family: Arial, sans-serif; max-width: 900px; margin: 40px auto; padding: 0 16px; line-height: 1.5; }
-    header { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; }
-    .tag { padding: 4px 10px; border: 1px solid #ccc; border-radius: 999px; font-size: 14px; }
-    .card { border: 1px solid #e5e5e5; border-radius: 12px; padding: 16px; margin: 14px 0; }
-    a { text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    ul { padding-left: 18px; }
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Pranay Babu | Data Engineer</title>
+
+<style>
+:root {
+  --bg: #ffffff;
+  --text: #111;
+  --card: #f7f7f7;
+  --border: #ddd;
+}
+.dark {
+  --bg: #0f172a;
+  --text: #e5e7eb;
+  --card: #1e293b;
+  --border: #334155;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, sans-serif;
+  max-width: 900px;
+  margin: auto;
+  padding: 24px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+nav a {
+  margin-right: 12px;
+  font-weight: 600;
+}
+
+button {
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  cursor: pointer;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px;
+  margin: 16px 0;
+}
+
+.card-details {
+  display: none;
+  margin-top: 12px;
+}
+
+.tag {
+  display: inline-block;
+  padding: 4px 10px;
+  margin: 4px;
+  border-radius: 999px;
+  font-size: 13px;
+  border: 1px solid var(--border);
+}
+
+.tag.active {
+  background: #2563eb;
+  color: white;
+}
+
+footer {
+  margin-top: 48px;
+  opacity: 0.7;
+  font-size: 14px;
+}
+</style>
 </head>
+
 <body>
-  <header>
-    <div>
-      <h1>Pranay Babu Mekala</h1>
-      <p>Manual Test Engineer → Data Engineer | Data Quality • Pipelines • SQL • Python</p>
-    </div>
-    <span class="tag">Open to Data Engineer roles</span>
-  </header>
 
-  <h2>About</h2>
-  <p>
-    I’m pivoting from Manual Testing into Data Engineering, focusing on reliable pipelines,
-    automation, and data quality. My QA background helps me build tested, repeatable ELT workflows.
-  </p>
+<header>
+  <div>
+    <h1>Pranay Babu</h1>
+    <p>Manual Test Engineer → Data Engineer</p>
+  </div>
+  <div>
+    <button onclick="toggleDark()">🌙 Dark Mode</button>
+  </div>
+</header>
 
-  <h2>Projects</h2>
+<nav>
+  <a href="#projects">Projects</a>
+  <a href="#skills">Skills</a>
+  <a href="Pranay_Babu_Data_Engineer_Resume.pdf" target="_blank">Resume</a>
+</nav>
 
-  <div class="card">
-    <h3>Batch ELT: API → Warehouse → Analytics</h3>
+<hr />
+
+<section id="projects">
+<h2>Projects</h2>
+
+<div class="card">
+  <h3>Batch ELT Pipeline (API → Warehouse)</h3>
+  <p>Python ingestion + dbt transformations</p>
+  <button onclick="toggleDetails(this)">View Details</button>
+
+  <div class="card-details">
     <ul>
-      <li>Python ingestion + SQL transformations</li>
-      <li>dbt models + tests, Docker for reproducible runs</li>
-      <li><a href="https://github.com/YOUR_USERNAME/data-engineering-portfolio">GitHub Repo</a></li>
+      <li>Extracts data from public API</li>
+      <li>Loads raw → staging → marts</li>
+      <li>dbt tests for freshness & null checks</li>
+      <li>Dockerized for reproducibility</li>
+    </ul>
+    <a href="https://github.com/YOUR_USERNAME/data-engineering-portfolio">
+      GitHub Repo →
+    </a>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Airflow Orchestration</h3>
+  <p>Scheduled pipelines with retries</p>
+  <button onclick="toggleDetails(this)">View Details</button>
+
+  <div class="card-details">
+    <ul>
+      <li>DAGs with retry & failure handling</li>
+      <li>Incremental loads</li>
+      <li>Logging + observability</li>
     </ul>
   </div>
+</div>
 
-  <div class="card">
-    <h3>Airflow Orchestration</h3>
-    <ul>
-      <li>Scheduled DAGs, retries, logging</li>
-      <li>Incremental loads + data quality checks</li>
-      <li><a href="#">GitHub Repo (add link)</a></li>
-    </ul>
-  </div>
+</section>
 
-  <h2>Skills</h2>
-  <ul>
-    <li>SQL, Python, ETL/ELT, Data Modeling</li>
-    <li>dbt, Airflow, Docker, GitHub Actions (CI)</li>
-    <li>PostgreSQL / BigQuery (pick your target)</li>
-  </ul>
+<section id="skills">
+<h2>Skills</h2>
 
-  <h2>Resume & Contact</h2>
-  <ul>
-    <li><a href="LINK_TO_RESUME_PDF">Resume (PDF)</a></li>
-    <li><a href="https://www.linkedin.com/in/pranay-babu-8b6a5a6a/">LinkedIn</a></li>
-    <li>Email: Pranay906@gmail.com</li>
-  </ul>
+<div>
+  <span class="tag" onclick="filterSkill(this)">Python</span>
+  <span class="tag" onclick="filterSkill(this)">SQL</span>
+  <span class="tag" onclick="filterSkill(this)">dbt</span>
+  <span class="tag" onclick="filterSkill(this)">Airflow</span>
+  <span class="tag" onclick="filterSkill(this)">Docker</span>
+  <span class="tag" onclick="filterSkill(this)">CI/CD</span>
+</div>
+</section>
+
+<footer>
+  <p>Built with GitHub Pages • Focused on data reliability & testing</p>
+</footer>
+
+<script>
+function toggleDetails(btn) {
+  const details = btn.nextElementSibling;
+  details.style.display =
+    details.style.display === "block" ? "none" : "block";
+  btn.textContent =
+    details.style.display === "block" ? "Hide Details" : "View Details";
+}
+
+function toggleDark() {
+  document.body.classList.toggle("dark");
+}
+
+function filterSkill(tag) {
+  tag.classList.toggle("active");
+}
+</script>
+
 </body>
 </html>
